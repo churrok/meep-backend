@@ -30,12 +30,16 @@ public class PositionService {
 	
 	
 	private static double distance(Position positionA,Position positionB, String unit) {
-		if ((positionA.getLatitude() == positionB.getLatitude()) && (positionA.getLongitud() == positionB.getLongitud())) {
+		if ((positionA.getLatitude() == positionB.getLatitude()) && (positionA.getLongitude() == positionB.getLongitude())) {
 			return 0;
 		}
 		else {
-			double theta = positionA.getLongitud() - positionB.getLongitud();
-			double dist = Math.sin(Math.toRadians(positionA.getLatitude())) * Math.sin(Math.toRadians(positionB.getLatitude())) + Math.cos(Math.toRadians(positionA.getLatitude())) * Math.cos(Math.toRadians(positionB.getLatitude())) * Math.cos(Math.toRadians(theta));
+			double theta = positionA.getLongitude() - positionB.getLongitude();
+			double dist = Math.sin(Math.toRadians(positionA.getLatitude())) * 
+							Math.sin(Math.toRadians(positionB.getLatitude())) + 
+							Math.cos(Math.toRadians(positionA.getLatitude())) * 
+							Math.cos(Math.toRadians(positionB.getLatitude())) * 
+							Math.cos(Math.toRadians(theta));
 			dist = Math.acos(dist);
 			dist = Math.toDegrees(dist);
 			dist = dist * 60 * 1.1515;

@@ -27,9 +27,7 @@ public class PositionController {
         List<Position> list = this.positionService.getCloseMeepers(position);
         return new ResponseEntity<Object>(list, HttpStatus.OK);
     }
-	
-	
-	@RequestMapping(value = "/create", method = RequestMethod.POST)
+	@RequestMapping(value = "/create-position", method = RequestMethod.POST)
     public ResponseEntity<Position> create(@RequestBody Position position) {
 		Position ret = this.positionService.guardar(position);
         return new ResponseEntity<Position>(ret, HttpStatus.CREATED);

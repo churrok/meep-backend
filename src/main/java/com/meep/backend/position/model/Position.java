@@ -11,6 +11,5 @@ public class Position {
 	private String id;
 	private String nombre;
 	private double latitude;
-	private double longitud;
-	
+	private double longitude;
 }
